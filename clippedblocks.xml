@@ -1,0 +1,21 @@
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="T4E3PCFWPSJ8W" />
+                    <table>
+                      <tr>
+                        <td>
+                          <input type="hidden" name="on0" value="Anime character? Any notes for us to talk about?"/>
+                          Anime character? Any notes for us to talk about?
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="text" name="os0" maxLength="200" />
+                        </td>
+                      </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+                  </form>
+
+<p>Once you submit your customization options, I’ll add it to my review queue. I’ll review the order to get a feel for what you’re looking for and to determine price. If I think it’s ready to start, I’ll ask for payment. Right now, we're only using PayPal for security and convenience, but I'm open to other options if you have a preferred method. All fully paid designs will be moved to the build queue in the order that payment is received. Both queues are worked from top down, with the build queue taking priority.</p>

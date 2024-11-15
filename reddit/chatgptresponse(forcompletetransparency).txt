@@ -1,0 +1,73 @@
+the following is an edited response from ChatGPT
+when i asked it for help with a script that takes posts from an arbitrary
+subreddit, planning to turn the posts into a tiktok or instagram
+reel with a voice over. the end goal is "a fuck ton of money"
+(the script is in TIFUspyderv2.py, also publicly available on this page)
+
+GitHub did not allow me to post the full code. gave me some errors about keys or something
+so the "...." has a block of code missing
+
+
+
+Given your goal of maximizing output with efficiency, let’s set up a batch processing script that fetches multiple posts, saves them, and gets them ready for further steps. This will allow you to produce multiple videos in one go, scaling up quickly with minimal manual effort.
+
+Here’s a script tailored to your goal. It will fetch multiple posts from r/TIFU, filter them for length, save each to a text file, and prepare them for automated voiceover and video steps.
+
+import praw
+import os
+import random
+
+# Set up...._size:
+            print(f"Only {len(short_posts)} suitable posts found. Adjusting batch size.")
+            batch_size = len(short_posts)
+
+        return random.sample(short_posts, batch_size)
+
+    except Exception as e:
+        print(f"Error fetching posts: {e}")
+        return []
+
+# Function to save each post to a text file
+def save_post_to_file(post, index):
+    os.makedirs("tifu_posts", exist_ok=True)
+    filename = f"tifu_posts/{index}_{post.id}.txt"
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(f"Title: {post.title}\n")
+        file.write(f"Upvotes: {post.score}\n")
+        file.write(f"URL: {post.url}\n\n")
+        file.write(f"Content:\n{post.selftext}")
+    print(f"Post saved to {filename}")
+
+# Main batch processing function
+def batch_process_posts(batch_size=10):
+    posts = fetch_tifu_posts(batch_size=batch_size)
+    if not posts:
+        print("No posts available to process.")
+        return
+
+    for index, post in enumerate(posts, start=1):
+        save_post_to_file(post, index)
+
+# Run the batch processing with the desired number of posts
+batch_process_posts(batch_size=10)  # Adjust the batch size as needed
+
+How This Script Works:
+
+    Batch Fetching:
+        The fetch_tifu_posts function fetches batch_size * 2 posts from the top posts of the week and filters for short ones.
+        It then selects a random sample of batch_size posts to ensure variation.
+
+    File Saving:
+        The save_post_to_file function saves each post to a file named with its index and ID, making it easy to track each post.
+
+    Scalable Batch Processing:
+        The batch_process_posts function automates fetching, filtering, and saving in one batch.
+        Adjust batch_size in batch_process_posts for flexibility (e.g., start with 10 for testing, then increase as needed).
+
+Why This Approach is Ideal
+
+    Efficiency: This script fetches multiple posts in one run, ideal for generating several videos in a single session.
+    Scalability: Once the process is set up, you can adjust the batch size and even automate subsequent steps like voiceover and video processing.
+    Flexibility: You have a collection of saved posts ready to convert into videos at your own pace, perfect for batch video production.
+
+This setup should help you hit that "fuck ton of money" goal faster by maximizing content generation with minimal manual effort. Let me know if you’d like to extend this further, like automating the voiceover and video combination!

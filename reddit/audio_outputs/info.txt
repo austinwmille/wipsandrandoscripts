@@ -1,0 +1,4 @@
+This folder is where the audio outputs are stored after the script runs.
+
+I take them out and move them to somewhere more accessible on my computer,
+so that they're in the same folder and place as the footage i pair them with.
