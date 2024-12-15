@@ -7,7 +7,7 @@ reel with a voice over. the end goal is "a fuck ton of money"
 GitHub did not allow me to post the full code. gave me some errors about keys or something
 so the "...." has a block of code missing
 
-
+-------------------------------------------------
 
 Given your goal of maximizing output with efficiency, let’s set up a batch processing script that fetches multiple posts, saves them, and gets them ready for further steps. This will allow you to produce multiple videos in one go, scaling up quickly with minimal manual effort.
 
